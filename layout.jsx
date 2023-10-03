@@ -1,16 +1,20 @@
 import '@styles/globals.css'
 import '@styles/styles.sass'
 
+import Provider from "@components/Provider";
+
 const RootLayout = ({children}) => {
   return (
     <html>
       <body>
-        <div className='main'>
+        <Provider>
+          <div className='main'>
 
-        </div>
-        <main>
-          {children}
-        </main>
+          </div>
+          <main>
+            {children}
+          </main>
+        </Provider>
       </body>
     </html>
   )

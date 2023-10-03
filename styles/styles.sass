@@ -3295,11 +3295,12 @@ header
         display: flex
         flex-direction: column
         .tabs-button-container
-            margin: auto
+            margin: auto 0
             width: 100%
+            max-width: 1060px
             height: auto
             display: flex
-            padding: 20px 0px
+            padding: 20px 0
             // .some-space
             //     width: 10%
             .tabs-box
@@ -3337,7 +3338,24 @@ header
                 .active-tab
                     background: #023047
             .add-user-box
-                width: 35%
+                width: 50%
+                display: flex
+                .general-add-button
+                    background: #219EBC
+                    padding: 5px 25px
+                    color: #fff
+                    border-radius: 10px
+                    font-weight: 600
+                    font-size: 20px
+                    line-height: 25px
+                    transition: 0.3s
+                    border: none
+                #add-user-type
+                    display: block
+                .general-add-button:hover
+                    background: #023047
+            .signout-box
+                width: 50%
                 display: flex
                 justify-content: flex-end
                 .general-add-button
