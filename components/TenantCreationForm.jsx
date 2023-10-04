@@ -67,7 +67,7 @@ const TenantCreationForm = () => {
                 .then(response => response.text())
                 .then(result => {
                     setIsLoadingCreation(false);
-                    tenantCreated(true);
+                    setTenantCreated(true);
                 })
                 .catch(error => console.log('error', error));
     }
