@@ -114,7 +114,7 @@ const TenantCreationForm = () => {
 
                 <div id="button-form-box" className="new-user-row">
                 {/* {userAlreadyexists && <p style={{color:'red'}}>User already exists</p>} */}
-                {tenantCreated && <p style={{color:'#023047'}}>User Created</p>}
+                {tenantCreated && <p style={{color:'#023047'}}>Tenant Created</p>}
                 {isLoadingCreation && <p style={{color:'#023047'}}>Loading</p>} 
                     <input onClick={createTenant} type="button" name="add-user" id="add-user" value="Add User" />
                 </div>
