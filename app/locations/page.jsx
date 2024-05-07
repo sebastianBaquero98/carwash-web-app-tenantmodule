@@ -5,6 +5,7 @@ import {
   getLocationsDateRange,
 } from "@lib/actions/locations.action";
 import DateRange from "@components/dateRangePicker";
+import { Loader } from "rsuite";
 import "rsuite/dist/rsuite.min.css";
 
 const Loctions = async ({ searchParams }) => {
@@ -13,8 +14,10 @@ const Loctions = async ({ searchParams }) => {
     searchParams.startDate === undefined &&
     searchParams.endDate === undefined
   ) {
+    // locations = [];
     locations = await getLocations("2024-05-06");
   } else {
+    // locations = [];
     locations = await getLocationsDateRange(
       searchParams.startDate,
       searchParams.endDate
@@ -51,7 +54,8 @@ const Loctions = async ({ searchParams }) => {
           <h2 style={{ marginLeft: "50px", fontSize: "30px", color: "white" }}>
             Ranking
           </h2>
-          <DateRange />
+
+          <DateRange info={locations[0].locationName} />
           {/* <DateRangePicker
             appearance="subtle"
             style={{

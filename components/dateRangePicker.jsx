@@ -1,11 +1,12 @@
 "use client";
 import { DateRangePicker } from "rsuite";
-import { Button } from "rsuite";
-import React, { useEffect, useState } from "react";
+import { Loader } from "rsuite";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-const DateRange = () => {
+const DateRange = ({ info }) => {
   const [startDate, setStartDate] = useState("");
   const [finishDate, setFinishDate] = useState("");
+  // const [clicked, setClicked] = useState(false);
   const handleRange = (event) => {
     if (event !== null) {
       // console.log('before iso ',  event[0])
@@ -26,6 +27,11 @@ const DateRange = () => {
     }
   };
 
+  // useEffect(() => {
+
+  //   setClicked(false);
+  // }, [info]);
+
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
       <DateRangePicker
@@ -35,7 +41,7 @@ const DateRange = () => {
         style={{
           borderRadius: "10px",
 
-          width: "250px",
+          width: "270px",
         }}
         placeholder="Rango de Fechas"
       />
@@ -51,12 +57,17 @@ const DateRange = () => {
           alignItems: "center",
         }}
       >
+        {/* {clicked ? (
+          <Loader />
+        ) : ( */}
         <Link
           style={{ color: "white", fontWeight: "bold" }}
           href={`/locations?startDate=${startDate}&endDate=${finishDate}`}
+          onClick={() => setClicked(true)}
         >
           Ok
         </Link>
+        {/* )} */}
       </div>
     </div>
   );
