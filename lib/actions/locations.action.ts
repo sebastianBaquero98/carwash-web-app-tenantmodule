@@ -22,7 +22,6 @@ export async function getLocationsDateRange(
     {
       method: "GET",
       redirect: "follow",
-      cache: "no-store",
     }
   );
   const result = await response.json();
