@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.5.4",
+    "eslint-config-next": "^14.2.3",
+    "next": "^14.2.3",
     "next-auth": "^4.23.2",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-select": "^5.8.0",
     "reactstrap": "^9.2.0",
+    "rsuite": "^5.60.1",
     "sass": "^1.68.0"
   },
   "devDependencies": {

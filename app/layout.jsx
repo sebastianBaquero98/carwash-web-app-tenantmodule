@@ -1,19 +1,22 @@
-import '@styles/globals.css'
-import '@styles/styles.sass'
+import "@styles/globals.css";
+import "@styles/styles.sass";
 
-const RootLayout = ({children}) => {
+const RootLayout = ({ children }) => {
   return (
     <html>
       <body>
-        <div className='main'>
-
+        <div
+          style={{
+            backgroundColor: "#14141C",
+            minHeight: "100vh",
+            width: "100%",
+          }}
+        >
+          <main>{children}</main>
         </div>
-        <main>
-          {children}
-        </main>
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;
