@@ -9,13 +9,19 @@ import Link from "next/link";
 import "rsuite/dist/rsuite.min.css";
 
 const Loctions = async ({ searchParams }) => {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Adding 1 because getMonth() returns zero-based month
+  const day = String(currentDate.getDate()).padStart(2, "0");
+  const date = `${year}-${month}-${day}`;
+
   let locations = [];
   if (
     searchParams.startDate === undefined &&
     searchParams.endDate === undefined
   ) {
     // locations = [];
-    locations = await getLocations("2024-05-06");
+    locations = await getLocations(date);
   } else {
     // locations = [];
     locations = await getLocationsDateRange(
