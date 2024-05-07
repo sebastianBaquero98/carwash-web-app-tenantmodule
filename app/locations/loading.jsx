@@ -8,7 +8,7 @@ export default function Loading() {
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        height: "300vh",
+
         alignItems: "center",
       }}
     >
@@ -33,6 +33,8 @@ export default function Loading() {
         </div>
         {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((location) => (
           <Skeleton
+            key={location}
+            duration="0.5"
             baseColor="#383840"
             style={{ width: "100%", height: "93px", paddingLeft: "50px" }}
           />

@@ -5,7 +5,7 @@ import {
   getLocationsDateRange,
 } from "@lib/actions/locations.action";
 import DateRange from "@components/dateRangePicker";
-import { Loader } from "rsuite";
+import Link from "next/link";
 import "rsuite/dist/rsuite.min.css";
 
 const Loctions = async ({ searchParams }) => {
@@ -32,7 +32,7 @@ const Loctions = async ({ searchParams }) => {
         display: "flex",
         flexDirection: "column",
         width: "100%",
-        height: "300vh",
+
         alignItems: "center",
       }}
     >
@@ -47,13 +47,16 @@ const Loctions = async ({ searchParams }) => {
           borderRadius: "15px",
           gap: "14px",
           marginTop: "20px",
-          height: "3000px",
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h2 style={{ marginLeft: "50px", fontSize: "30px", color: "white" }}>
-            Ranking
-          </h2>
+          <Link href="/locations" style={{ textDecoration: "none" }}>
+            <h2
+              style={{ marginLeft: "50px", fontSize: "30px", color: "white" }}
+            >
+              Ranking
+            </h2>
+          </Link>
 
           <DateRange info={locations[0].locationName} />
           {/* <DateRangePicker
